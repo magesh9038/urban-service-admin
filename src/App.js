@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Fragment} from 'react';
+import { Link } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { BrowserRouter,   Router} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
+
+
+import Admin from '../src/component/Admin/Admin';
+import users from '../src/component/Admin/users';
+import dealers from '../src/component/Admin/dealers';
+
+const App = () => 
+<BrowserRouter>
+    <Fragment>
+      
+        <Route exact path='/' component={Admin}/>
+        <Route exact path='/users' component={users}/>
+        <Route exact path='/dealers' component={dealers}/>
+
+    </Fragment>
+    </BrowserRouter>
 export default App;
